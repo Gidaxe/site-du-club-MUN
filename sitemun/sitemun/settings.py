@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'colorfield',
     'general.apps.GeneralConfig',
     'admin',
+    'fontawesomefree',
 ]
 
 MIDDLEWARE = [

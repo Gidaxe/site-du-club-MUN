@@ -51,7 +51,7 @@ class Generation(models.Model):
         return f'{self.Nom_de_la_Génération}'
 
     def set_default(self):
-        self.Nom_de_la_Génération = 'Gen-X'
+        self.Nom_de_la_Génération = ' '
         self.Citation = " "
 
 # TODO: Make as many things as possible customizable (pictures, section titles, etc...), team-up with sasha.

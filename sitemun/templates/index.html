@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'cssfold/index.css' %}">
     <link rel="stylesheet" href="{% static 'cssfold/actus.css' %}">
     <link rel="stylesheet" href="{% static 'cssfold/carousel.css' %}">
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
 </head>
 
 
@@ -42,7 +43,7 @@
 
     <section class="Presentation">
 
-        <h1>{{home.Titre_section1}}</h1>
+        <h1>C'est quoi MUN ?</h1>
 
         <div class="container1">
             <div class="carousel">
@@ -95,7 +96,7 @@
 
     <section class="Actus">
 
-        <h1>{{home.Titre_section2}}</h1>
+        <h1>Actualités MUN</h1>
 
         {% include 'partials/img-news-box.html' %}
 
