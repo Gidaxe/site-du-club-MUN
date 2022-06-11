@@ -1,0 +1,124 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui nous sommes</title>
+    <link rel="stylesheet" href="{% static 'cssfold/design.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfold/lightslider.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfold/carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfold/presentation.css' %}">
+    <script src="{% static 'jsfold/jquery.js' %}"></script>
+    <script src="{% static 'jsfold/lightslider.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Indie+Flower&family=Rubik:wght@500&family=Source+Sans+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    {% autoescape off %}
+
+    {% include 'partials/general-style.html' %}
+
+    <script src="{% static 'jsfold/script.js' %}"></script>
+
+    <header>
+        {% include 'partials/navbar.html' %}
+    </header>
+
+    {% for i in txt_presentation %}
+    <section class="intro">
+
+        <h1>{{i.titre}}</h1>
+    
+
+        <div class="intro-txt">
+            <p>
+                {{i.texte}}
+            </p>
+        </div>
+    </section>
+    {% endfor %}
+
+    <section class="Activites-CLUB">
+
+        <h1>Ce qu'on fait:</h1>
+
+        <div class="container1 -big">
+            <div class="carousel -big">
+                <button class="carousel__button button-left">
+                    <img src="{% static 'img/leftred.png' %}" alt="$--" >
+                </button>
+                <div class="carousel__track-container">
+                    <ul class="carousel__track">
+
+                        <li class="carousel__slide current__slide">
+                            <div class="big-slider">
+                                <h3>{{ first_slide.titre_slide }}</h3>
+                                <img src="{{first_slide.img_url}}" alt="truc">
+                                <p>{{first_slide.texte_slide}}</p>
+                            </div>
+                        </li>
+
+                    {% for z in sliders %}
+                        <li class="carousel__slide">
+                            <div class="big-slider">
+                                <h3>{{z.titre_slide}}</h3>
+                                <img src="{{z.img_url}}" alt="truc">
+                                <p>{{z.texte_slide}}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+
+
+                    </ul>
+                    
+                </div>
+                <button class="carousel__button button-right">
+                    <img src="{% static 'img/rightred.png' %}" alt="-->">
+                </button>
+                <div class="carousel__nav">
+                    <button class="carouselindicator current__slide"></button>
+                    <button class="carouselindicator"></button>
+                    <button class="carouselindicator"></button>
+                    <button class="carouselindicator"></button>
+                </div>
+            </div>
+        </div>
+        <script src="{% static 'jsfold/Carousel.js' %}"></script>
+
+    </section>
+
+
+    <section class="membres">
+
+        <h1>Nos membres</h1>
+        
+        <div class="holder-membres">
+            <ul id="autoWidth" class="cs-hidden">
+                {% for x in membres %}
+                <li class="item-a">
+                    <div class="membre">
+                    <img src="{{x.img_url}}" alt="Photo ou avatar">
+                    <h3>{{x.Nom}}</h3>
+                    <center>
+                        <p>{{x.description_perso}}</p>
+                    </center>
+                    </div>
+                </li>
+                {% endfor %}
+              </ul>
+            
+            
+        </div>
+
+    </section>
+
+
+    {% include 'partials/footer.html' %}
+    {% endautoescape %}
+    
+</body>
+</html>

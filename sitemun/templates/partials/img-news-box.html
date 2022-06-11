@@ -1,0 +1,19 @@
+{% load static %}
+
+        <div class="img-news-box">
+            {% if img_news_box.img_upload and not img_news_box.img_url %}
+                <img src="{{img_news_box.img_upload.url}}" alt="illustration">
+            {% elif img_news_box.img_url and not img_news_box.img_upload %}
+                <img src="{{img_news_box.img_url}}" alt="illustration">
+            {% elif not box.img_url and not box.img_upload %}
+                <img src="{% static 'images/grntriangles.jpg' %}" alt="illustration">
+            {% else %}
+                <img src="{{img_news_box.img_upload.url}}" alt="illustration">
+            {% endif %}
+            <h3 style="color: black;">{{img_news_box.titre}}</h3>
+            <p style="font-size: 1em;">
+               {{img_news_box.texte}}
+            </p>
+            <a href="Actus/">+ de Nouveautés</a>
+        </div>
+    

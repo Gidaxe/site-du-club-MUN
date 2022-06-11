@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add an Item</title>
+</head>
+<body>
+    <h1>Add member</h1>
+
+    <form action="modobject/{{ID}}" method="post">
+        {% csrf_token %}
+        Titre:<br>
+        <input name="titre">
+        <br><br>
+        Subtitle:<br>
+        <input name="sub">
+        <br><br>
+        Illustration link: <br>
+        <input name="piclink">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

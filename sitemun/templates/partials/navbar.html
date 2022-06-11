@@ -1,0 +1,36 @@
+{% load static %}
+<nav class="home">
+            {% if navbar.logo %}
+                <img src="{{ navbar.logo.url }}" alt="Logo" class="logo">
+            {% else %}
+                <img src="{% static 'images/logo MUN.jpg' %}" alt="Logo" class="logo">
+            {% endif %}
+
+
+
+            <div class="nav-links">
+                <ul>
+
+                    <li>
+                        <a href="index/">Accueil</a>
+                    </li>
+
+                    <li>
+                        <a href="Presentation/">Présentation</a>
+                    </li>
+
+                    <li>
+                        <a href="Actus/">Actualités</a>
+                    </li>
+
+                    <li>
+                        <a href="BDD/">Base de données</a>
+                    </li>
+
+                    <li>
+                        <a href="login/">Admin</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>

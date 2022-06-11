@@ -1,0 +1,135 @@
+nav.home {
+  display: flex;
+  padding: .4% 4% .2% 2%;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+}
+
+.Header-txt {
+    width: 90%;
+    color: azure;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: none;
+  }
+  
+  .Header-txt h1 {
+  
+    font-size: 62px;
+    text-decoration: none;
+    color: white;
+    background: none;
+  }
+  
+  .Header-txt p {
+    font-size: 13px;
+    margin-top: 10px;
+    background: none;
+    font-family: 'Indie Flower', cursive;
+  }
+  
+  .Presentation {
+    height: 100vh;
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
+    grid-gap: 5px;
+  }
+  
+  section.Presentation h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  .text-pres {
+    text-align: center;
+    width: 50%;
+  }
+  
+  .text-pres h3 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: x-large;
+  }
+  
+  .text-pres p {
+    margin-bottom: 35px;
+    font-size: larger;
+    line-height: 130%;
+  }
+  
+  .text-pres a {
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: yellowgreen;
+    padding: 5px;
+    font-size: 25px;
+  }
+  
+  .text-pres a:hover {
+    background-color: rgb(130, 185, 19);
+  }
+
+  .container2 {
+    display: flex;
+    justify-content: center;
+    grid-row-start: 7;
+    grid-row-end: 11;
+  }
+
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+
+    .Presentation {
+      height: 100vh;
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 10% 0 10% 0;
+    }
+    
+    section.Presentation h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 7%;
+    }
+  
+    .text-pres {
+      text-align: center;
+      width: 80%;
+    }
+    
+    .text-pres h3 {
+      margin: 5%;
+      font-size: 1em;
+    }
+    
+    .text-pres p {
+      margin-bottom: 6%;
+      font-size: 1.15em;
+      line-height: 130%;
+    }
+
+    .text-pres a {
+      text-decoration: none;
+      color: whitesmoke;
+      background-color: yellowgreen;
+      padding: 5px;
+      width: fit-content;
+      height: fit-content;
+      margin: auto;
+      font-size: 1em;
+    }
+  }

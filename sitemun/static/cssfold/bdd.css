@@ -1,0 +1,68 @@
+.Holder {
+    height: 100vh;
+  }
+  
+  .documentation h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+  }
+  
+  .view {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 1fr;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .box {
+    margin: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .box img {
+    width: 100%;
+    height: 70%;
+  }
+  
+  .box p {
+    text-align: center;
+    padding: 5px;
+  }
+  
+  .box:hover {
+    box-shadow: 0 8px 16px 0 rgb(0, 217, 255);
+  }
+
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .Holder {
+      height: 225vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .view {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      height: 225vh;
+    }
+
+    .box {
+      margin: 7%;
+      overflow: hidden;
+    }
+
+    .box p {
+      font-size: small;
+      text-align: center;
+      padding: 5px;
+    }
+  }

@@ -1,0 +1,60 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDD MUN</title>
+    <link rel="stylesheet" href="{% static 'cssfold/design.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfold/bdd.css' %}">
+    <script src="{% static 'jsfold/lightslider.js' %}"></script>
+</head>
+<body>
+    {% autoescape off %}
+
+    {% include 'partials/general-style.html' %}
+
+    <header>
+        {% include 'partials/navbar.html' %}
+    </header>
+
+
+
+    <section class="documentation">
+
+        <h1>Documents MUN</h1>
+
+        <div class="Holder">
+
+
+            <ul id="autoWidth" class="cs-hidden">
+                <li class="item-a">
+                    <div class="view">
+
+
+
+                        {% for file in files reversed %}
+
+                        <div class="box">
+                            <a href="{{file.fichier.url}}" target="blank"><img src="{{file.img_url}}" alt="PNG"></a>
+                            <p> <p style="font-size: 50px"><h3 style="text-align:center; margin: 0">{{file.titre}}</h3> <br> {{file.description}}  </p></p>
+                        </div>
+
+                        {% endfor %}
+
+
+
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    {% include 'partials/footer.html' %}
+    {% endautoescape %}
+
+</body>
+</html>

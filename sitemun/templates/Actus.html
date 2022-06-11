@@ -1,0 +1,70 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualites</title>
+    <link rel="stylesheet" href="{% static 'cssfold/design.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfold/actus.css' %}">
+</head>
+
+<body>
+    {% autoescape off %}
+
+    {% include 'partials/general-style.html' %}
+
+    <header>
+        {% include 'partials/navbar.html' %}
+    </header>
+
+    
+
+    <section class="Actus">
+
+        <h1 style="color: red;">Actualités MUN</h1>
+        {% for box in Boxes reversed %}
+
+    {% if box.img_url or box.img_upload or box.bouton_vert %}
+        <div class="img-news-box">
+            {% if box.img_upload and not box.img_url %}
+                <img src="{{box.img_upload.url}}" alt="illustration">
+            {% elif box.img_url and not box.img_upload %}
+                <img src="{{box.img_url}}" alt="illustration">
+            {% elif not box.img_url and not box.img_upload %}
+                <img src="{% static 'images/grntriangles.jpg' %}" alt="illustration">
+            {% else %}
+                <img src="{{box.img_upload.url}}" alt="illustration">
+            {% endif %}
+
+            <h3>{{box.titre}}</h3>
+            <p>
+                {{box.texte}}
+            </p>
+            {% if box.bouton_vert %}
+            <a href="{{box.bouton_vert}}" target="blank">En savoir +</a>
+            {% else %}
+            <a href="Actus/" target="blank">En savoir +</a>
+            {% endif %}
+        </div>
+
+        {% else %}
+        <div class="txt-news-box">
+            <h3>{{box.titre}}</h3>
+            <p>
+                {{box.texte}}
+            </p>
+        </div>
+
+        {% endif %}
+        {% endfor %}
+    
+    </section>
+
+
+
+    {% include 'partials/footer.html' %}
+    {% endautoescape %}
+    
+</body>
+</html>

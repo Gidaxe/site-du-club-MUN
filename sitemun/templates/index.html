@@ -1,0 +1,108 @@
+{% load static %}
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="{% static 'cssfold/design.css' %}" />
+    <link rel="stylesheet" href="{% static 'cssfold/index.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfold/actus.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfold/carousel.css' %}">
+</head>
+
+
+
+<body>
+    {% autoescape off %}
+
+    {% include 'partials/general-style.html' %}
+
+    <script src="{% static 'jsfold/script.js' %}"></script>
+    {% if home.photo_de_groupe %}
+        <header style=" min-height: 100vh;width: 100%;background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url({{ home.photo_de_groupe.url }});background-position: center;background-size: cover;position: relative;">
+    {% else %}
+        <header style=" min-height: 100vh;width: 100%;background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url({% static 'images/MUNTEAM.jpg' %});background-position: center;background-size: cover;position: relative;">
+    {% endif %}
+
+        {% include 'partials/navbar.html' %}
+
+
+        <div class="Header-txt">
+
+            <h1 style="font-weight: bold">CLUB MUN</h1>
+            <p>Site Officiel du Club MUN du lycee Jean-Mermoz de Dakar</p>
+
+        </div>
+
+
+    </header>
+
+
+
+    <section class="Presentation">
+
+        <h1>{{home.Titre_section1}}</h1>
+
+        <div class="container1">
+            <div class="carousel">
+                <button class="carousel__button button-left">
+                    <svg viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512"><path d="m297.2 478 20.7-21.6L108.7 256 317.9 55.6 297.2 34 65.5 256l231.7 222zM194.1 256 425.8 34l20.7 21.6L237.3 256l209.2 200.4-20.7 21.6-231.7-222z" fill="#00fc22" class="fill-000000"></path></svg>
+                </button>
+                <div class="carousel__track-container">
+                    <ul class="carousel__track">
+                        <li class="carousel__slide current__slide">
+                            <img src="{{x.img_url1}}" alt="truc">
+                        </li>
+                        <li class="carousel__slide">
+                            <img src="{{x.img_url2}}" alt="truc">
+                        </li>
+                        <li class="carousel__slide">
+                            <img src="{{x.img_url3}}" alt="truc">
+                        </li>
+                        <li class="carousel__slide">
+                            <iframe
+                                src="{{x.video_url}}">
+                            </iframe>
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel__button button-right">
+                        <svg data-name="Layer 1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m214.78 478-20.67-21.57L403.27 256 194.11 55.57 214.78 34l231.68 222Zm103.11-222L86.22 34 65.54 55.57 274.7 256 65.54 456.43 86.22 478Z" fill="#00fc22" class="fill-000000"></path></svg>
+                </button>
+                <div class="carousel__nav">
+                    <button class="carouselindicator current__slide"></button>
+                    <button class="carouselindicator"></button>
+                    <button class="carouselindicator"></button>
+                    <button class="carouselindicator"></button>
+                </div>
+            </div>
+        </div>
+
+        <script src="{% static 'jsfold/Carousel.js' %}"></script>
+
+        <div class="container2">
+            <div class="text-pres">
+                <h3>{{x.titre}}</h3>
+                <p> {{x.texte}} </p>
+                <a href="Presentation/">+ sur notre Club</a>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <section class="Actus">
+
+        <h1>{{home.Titre_section2}}</h1>
+
+        {% include 'partials/img-news-box.html' %}
+
+    </section>
+
+    {% include 'partials/footer.html' %}
+    {% endautoescape %}
+
+</body>
+</html> 

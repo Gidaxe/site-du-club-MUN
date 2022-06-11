@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+body {
+    background-image: var(--background-img);
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-size:cover; 
+    background-color: var(--background-col);
+    background-position: center;
+  }
+
+h1 {
+  font-size: xx-large;
+  color: rebeccapurple;
+  font-family: 'Beau Rivage', cursive;
+}
+
+nav {
+  display: flex;
+  padding: .4% 4% .2% 2%;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--navbar-color);
+}
+
+img.logo {
+  width: 95px;
+  border-radius: 50%;
+}
+
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul {
+  background-color: transparent;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+  background-color: transparent;
+}
+
+.nav-links ul li a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: medium;
+  background-color: transparent;
+}
+
+.nav-links ul li::after{
+  content: "";
+  top: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--highlights);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links ul li:hover:after {
+  width: 100%;
+}
+
+footer nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  border-top: 3px solid var(--highlights);
+  background: var(--footer-color);
+}
+
+footer nav h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  margin: 10px;
+}
+
+footer nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px;
+  color: black;
+  font-weight:lighter;
+}
+
+footer nav a:hover {
+  background-color: lightskyblue;
+}
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  footer nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer nav h2 {
+    font-size: small;
+  }
+  
+  footer nav a {
+    font-size: small;
+  }
+}
